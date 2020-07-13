@@ -1,6 +1,7 @@
 import Taro from '@tarojs/taro'
 import { View, Text, ScrollView, Button } from '@tarojs/components'
 import { AtTabs, AtTabsPane, AtButton } from 'taro-ui'
+import './index.scss'
 
 export default class Index extends Taro.Component {
   config = {
@@ -39,29 +40,41 @@ export default class Index extends Taro.Component {
       <AtTabs current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
         <AtTabsPane current={current} index={0} >
           <ScrollView>
-          <View style='text-align: center' className='at-col' >
-            <View style='height:100px; background-color: #ccc;margin: 12px' className='at-row' onClick={this.handleItemClick}>
-              <View>
-                <View>
-                  <Text className="type">维修</Text>
-                  <Text>保利星座-1-2-205-A</Text>
-                  <Text>＞</Text>
+          <View style='text-align: center'>
+            <View style='height:100px; background-color: #ccc;margin-bottom: 12px'  onClick={this.handleItemClick}>
+
+                <View className='at-row at-row__align--center' style="height:40px;">
+                  <View className="at-col at-col-2" >维修</View>
+                  <View className='at-col at-col-8' style="text-align: left">保利星座-1-2-205-A</View>
+                  <View className='at-col at-col-2' style="text-align: center;">＞</View>
                 </View>
-                <View>
-                  <View>
-                    <Text>成都市高新区</Text>
+
+                <View className='at-col'>
+                  <View className='at-row at-row__align--center' style="height:30px;font-size: 14px">
+                    <View className="at-col at-col-2" style="text-align:center">图标</View>
+                    <View className="at-col at-col-8" style="text-align:left">成都市高新区天府大道15号</View>
                   </View>
-                  <View>
-                    <Text>2-19-06-09</Text>
-                    <Text>15:32</Text>
-                    <AtButton size='small' type='primary' lang='zh_CN' customStyle="width:50px;font-size:12px;height:24px;padding-top:-6px" onClick={this.handleItemProcess}>处理</AtButton>
+                  <View className='at-row at-row__align--center' style="height:30px; font-size: 14px">
+                    <View className="at-col at-col-2">图标</View>
+                    <View className="at-col at-col-3" style="text-align:left">2019-06-09</View>
+                    <View className="at-col at-col-5" style="text-align:left">15:32</View>
+                    <View className="at-col at-col-2" style="margin-left: -12px;padding:0 6px" onClick={this.handleItemProcess}>
+                      <View style="background:#49f;border-radius: 6px;color: white;font-size: 16px">处理</View>
+                    </View>
                   </View>
                 </View>
-              </View>
+
             </View>
 
-            <View style='height:100px; background-color: #ccc;margin: 12px' className='at-row'>B</View>
-            <View style='height:100px; background-color: #ccc;margin: 12px' className='at-row'>C</View>
+
+            <View style='height:100px; background-color: #ccc;margin-bottom: 12px' className='at-row'>
+              <View className='at-row'>
+                <View className="at-col at-col-2" style="background: red">维修</View>
+                <View className='at-col at-col-8' style="background: orange">保利星座-1-2-205-A</View>
+                <View className='at-col at-col-2' style="background: pink">＞</View>
+              </View>
+            </View>
+            <View style='height:100px; background-color: #ccc;margin-bottom: 12px' className='at-row'>C</View>
           </View>
           </ScrollView>
         </AtTabsPane>
