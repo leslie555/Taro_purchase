@@ -1,0 +1,18 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin displayFlex($a,$b,$c) {
+  display: flex;
+  flex-direction: $a;
+  align-items: $b;
+  justify-content: $c;
+}

@@ -1,0 +1,11 @@
+@import "@/styles/mixin";
+.no-msg{
+  width: 100vw;
+  height: 400px;
+  @include displayFlex(row,flex-start,center);
+  .img{
+    width: 231px;
+    height: 140px;
+    margin-top: 40px;
+  }
+}

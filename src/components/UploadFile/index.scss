@@ -1,0 +1,33 @@
+@import "@/styles/mixin";
+
+.upload-box {
+  background-color: #ffffff;
+  padding-left: 20px;
+}
+
+.upload-content {
+  @include displayFlex(row, flex-start, flex-start);
+}
+
+.upload-image {
+  width: 67px;
+  height: 67px;
+  border-color: #eee;
+  border-width: 1PX;
+  border-style: dashed;
+  margin-right: 10px;
+}
+
+.upload-btn {
+  @include displayFlex(row, center, center);
+  width: 67px;
+  height: 67px;
+  border-color: #eee;
+  border-width: 1PX;
+  border-style: dashed;
+  background-color: #fefefe;
+  .iconfont {
+    color: #eee;
+    font-size: 30px
+  }
+}

@@ -1,0 +1,29 @@
+@import "mixin";
+
+.search-condition {
+  @include displayFlex(row, center, center);
+  height: 40px;
+  background: #fff;
+  .search-condition-item {
+    @include displayFlex(row, center, center);
+    flex: 1;
+    height: 40px;
+  }
+  .search-condition-inner {
+    @include displayFlex(row, center, center);
+    color: #333;
+    height: 40px;
+    span {
+      font-size: 14px;
+    }
+    i {
+      @include displayFlex(row, center, center);
+      font-size: 16px;
+      height: 40px;
+      padding-top: 4px;
+      box-sizing: border-box;
+      margin-left: 2px;
+
+    }
+  }
+}

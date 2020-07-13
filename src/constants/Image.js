@@ -1,0 +1,3 @@
+// 图片上传
+export const SET_UPLOADIMG = 'SET_UPLOADIMG'
+export const REMOVE_UPLOADIMG = 'REMOVE_UPLOADIMG'
