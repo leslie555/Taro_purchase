@@ -3,6 +3,10 @@ import { View, Text, ScrollView, Button } from '@tarojs/components'
 import { AtTabs, AtTabsPane, AtButton } from 'taro-ui'
 
 export default class Index extends Taro.Component {
+  config = {
+    navigationBarTitleText: '工单'
+  }
+  
   constructor () {
     super(...arguments)
     this.state = {
