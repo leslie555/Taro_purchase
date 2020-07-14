@@ -63,8 +63,9 @@ class App extends Component {
   componentWillMount() {
     Taro.getSystemInfo({})
     .then(res  => {
-      console.log('xxxx', res)
+      console.log('设备信息', res)
       Taro.$navBarMarginTop =  res.statusBarHeight || 20
+      Taro.$isliuhai = res.safeArea.top === 44
     })
   }
   componentDidMount () {}

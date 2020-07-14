@@ -4,7 +4,7 @@ import './index.scss'
 
   export default class Navbar extends Taro.Component {
     constructor() {
-      this.style = { paddingTop: Taro.$navBarMarginTop + 8 + 'PX', paddingBottom: Taro.$navBarMarginTop - 4 + 'PX'}
+      this.style = { paddingTop: Taro.$navBarMarginTop + 8 + 'PX', paddingBottom: Taro.$isliuhai ? Taro.$navBarMarginTop - 28 + 'PX' : Taro.$navBarMarginTop - 4 + 'PX'}
     }
   
     render() {

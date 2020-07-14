@@ -12,6 +12,8 @@ export function calcDate (num, type=0) {
   return myDate.getDate()
 }
 
+const weekArr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+
 class Index extends Taro.Component {
   config = {
     navigationStyle: 'custom',
@@ -24,16 +26,12 @@ class Index extends Taro.Component {
     // },
   }
 
-  state = {
-    loading: true,
-    threads: [],
-    current: 0,
-    tabs: [
-      { title: '首页' },
-      { title: '工单' },
-      { title: '消息' },
-      { title: '我的' }
-    ]
+  constructor(props) {
+    super(props)
+    this.setStyle = {top: Taro.$isliuhai ? '52PX' : '28PX'}
+    this.state = {
+      loading: true,
+    }
   }
 
   async componentDidMount () {
@@ -84,41 +82,57 @@ class Index extends Taro.Component {
   }
 
   render () {
-    const { loading, threads, current,tabs } = this.state
-    // const afterNavbar = {height: '4vh', marginTop: Taro.$navBarMarginTop * 2 + 4 + 'PX'}
-    const afterNavbar = {height: '3vh'}
-    const cellRow = {borderTop: '1px solid rgba(200,200,200,0.2)',height:'16vh', backgroundColor: '#fff', }
+    const { loading } = this.state
+    const cellRow = {borderTop: '1px solid rgba(200,200,200,0.2)', backgroundColor: '#fff', }
     const today = {color: '#3888FE'}
-    const weekArr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
     return (
       <View className='container'>
         <NavBar title='我的'/>
-        <Image src={require('../../assets/images/setting.png')}
-          mode='widthFix'
-          className='setting'
-          onClick={this.handleSetting}
-        />
-        <View style={afterNavbar}></View>
+        <View className='setting-area' onClick={this.handleSetting} style={this.setStyle}>
+          <Image src={require('../../assets/images/setting.png')}
+            mode='widthFix'
+            className='setting'
+          />
+        </View>
+        <View className='after-nav'></View>
 
-        <View className='at-row at-row__justify--around total-show'>
-          <View className='at-col at-col-6 split-line' onClick={() => this.handleClick(1)}>
-            <View className='num'>2</View>
-            <View className='type'>待处理</View>
+        <View className='total-show'>
+          <View className='split-line isDone' onClick={() => this.handleClick(1)}>
+            <Image src={require('../../assets/images/waitDo.png')}
+              mode='widthFix'
+              className='isDonePic'
+            />
+            <View>
+              <View className='num'>2</View>
+              <View className='type'>待处理</View>
+            </View>
           </View>
-          <View className='at-col at-col-6' onClick={() => this.handleClick(2)}>
-            <View className='num'>99+</View>
-            <View className='type'>已完成</View>
+
+          <View className='isDone' onClick={() => this.handleClick(2)}>
+            <Image src={require('../../assets/images/hadDone.png')}
+              mode='widthFix'
+              className='isDonePic'
+            />
+            <View>
+              <View className='num'>99+</View>
+              <View className='type'>已完成</View>
+            </View>
+           
           </View>
         </View>
-        <View className='at-row at-row__align--center task9'>
-          <View className='at-col at-col-12'>
-            <View>近9天待上门任务</View>
-          </View>
+
+        <View className='task9-title'>
+          <Image src={require('../../assets/images/nineDayToDo.png')}
+            mode='widthFix'
+            className='todo-9'
+          />
+          <View>近9天待上门任务</View>
         </View>
 
-        <View className='at-col'>
+        <View className='at-col all-cell'>
 
-          <View className='at-row left-line' style={cellRow}>
+          <View className='at-row cell-row' style={cellRow}>
+
             <View className='at-col at-col-4' onClick={() => this.handleClick(3, 0)}>
               <View className='at-row at-row__justify--between'>
                 <View className='at-col at-col-6' style={today}>{weekArr[calcDate(0, 2)]}</View>
@@ -126,6 +140,7 @@ class Index extends Taro.Component {
               </View>
               <View className='cell-num' style='text-decoration: underline #3888FE'>3</View>
             </View>
+
             <View className='at-col at-col-4'>
               <View className='at-row at-row__justify--between'>
                 <View className='at-col at-col-6' >{weekArr[calcDate(1, 2)]}</View>
@@ -142,7 +157,7 @@ class Index extends Taro.Component {
             </View>
           </View>
 
-          <View className='at-row left-line' style={cellRow}>
+          <View className='at-row cell-row' style={cellRow}>
             <View className='at-col at-col-4'>
               <View className='at-row at-row__justify--between'>
                 <View className='at-col at-col-6' >{weekArr[calcDate(3, 2)]}</View>
@@ -166,7 +181,7 @@ class Index extends Taro.Component {
             </View>
           </View>
 
-          <View className='at-row left-line last-row' style={cellRow}>
+          <View className='at-row cell-row last-row' style={cellRow}>
             <View className='at-col at-col-4'>
               <View className='at-row at-row__justify--between'>
                 <View className='at-col at-col-6' >{weekArr[calcDate(6, 2)]}</View>

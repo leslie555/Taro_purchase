@@ -5,57 +5,113 @@
   background-color: #eeeeee;
   width: 100vw;
   height:100vh;
-  .setting {
-    width: 16PX;
+  display: flex;
+  flex-direction: column;
+  .setting-area {
+    width: 24PX;
+    height: 24PX;
     position: absolute;
-    top: 32PX;
-    left: 22PX;
+    // top: 28PX; //top值设置在页面，因为刘海屏无法确定高
+    left: 18PX;
+    .setting {
+      width: 16PX;
+      position: absolute;
+      margin-top: 4PX;
+      margin-left: 4PX;
+      // top: 32PX;
+      // left: 22PX;
+    }
   }
-}
-.total-show {
-  height: 16vh;
-  background-color: #ffffff;
-  text-align: center;
-  box-shadow: 
-    0 0,
-    0 -2PX 2PX rgba(200,200,200,0.5),
-    0 0,
-    0 2PX 2PX rgba(200,200,200,0.5);
-  .split-line {
-    box-shadow:  1PX 0 1PX rgba(200,200,200,0.2);;
+  .after-nav {
+    height: 3vh
   }
-  .num {
-    font-size: 24PX;
-    font-weight: bold;
+  .total-show {
+    display: flex;
+    flex-direction: row;
+    height: 16vh;
+    background-color: #ffffff;
+    // text-align: center;
+    box-shadow: 
+      0 0,
+      0 -2PX 2PX rgba(200,200,200,0.5),
+      0 0,
+      0 2PX 2PX rgba(200,200,200,0.5);
+    .isDone {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      // background-color: orange;
+      text-align: center;
+      .isDonePic {
+        height: 8vh;
+        width: 7vh;
+        margin-right: 4vw ;
+      }
+      .num {
+        font-size: 20PX;
+        font-weight: bold;
+      }
+      .type {
+        font-size: 18PX;
+        font-weight: 500;
+      }
+    }
+    .split-line {
+      box-shadow:  1PX 0 1PX rgba(200,200,200,0.2);;
+    }
   }
-  .type {
-    font-size: 20PX;
-    font-weight: bold;
+  
+  .task9-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    // margin-bottom: 1vh;
+    height: 9vh;
+    font-size: 18PX;
+    font-weight: 600;
+    color: #222;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 -2PX 2PX rgba(200,200,200,0.5);
+    .todo-9 {
+      width: 4vh;
+      margin-right: 3vh;
+    }
+  }
+
+  .all-cell {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: orange;
+    margin-bottom: 10vh;
+    .cell-row {
+      flex: 1
+    }
+    .cell-row > .at-col-4 + .at-col-4 {
+      border-left: 1PX solid rgba(200,200,200,0.2);
+    }
+    .at-row__justify--between {
+      margin-top: 2vh;
+    }
+    .at-row__justify--between > .at-col-6 {
+      text-align: center;
+      color: #999999;
+    }
+    .cell-num {
+      margin-top: 4vh;
+      font-size: 20PX;
+      text-align: center;
+      font-weight: bold;
+    }
+    .last-row {
+      box-shadow: 0 2PX 2PX rgba(200,200,200,0.5)
+    }
   }
 }
 
-.task9 {
-  margin-top: 5vh;
-  height: 9vh;
-  font-size: 18PX;
-  font-weight: bold;
-  background-color: #ffffff;
-  text-align: center;
-  box-shadow: 0 -2PX 2PX rgba(200,200,200,0.5);
-}
-.left-line > .at-col-4 + .at-col-4 {
-  border-left: 1PX solid rgba(200,200,200,0.2);
-}
-.at-row__justify--between > .at-col-6 {
-  text-align: center;
-  color: #999999;
-}
-.cell-num {
-  margin-top: 5vh;
-  font-size: 20PX;
-  text-align: center;
-  font-weight: bold;
-}
-.last-row {
-  box-shadow: 0 2PX 2PX rgba(200,200,200,0.5)
-}
+

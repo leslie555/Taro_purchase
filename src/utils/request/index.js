@@ -62,7 +62,7 @@ const requestDefend = function (options, resolve, reject, defendType = 0) {
       }
     }
     options.fail = err => {
-      TaroTaro.hideLoading()
+      Taro.hideLoading()
       Taro.showToast({
         title: '请求失败,请检查网络!',
         icon: 'none'
