@@ -16,17 +16,15 @@ const request = function(options) {
 }
 
 // 新增登录守卫  登录过期递归调用重新登录
-const requestDefend = function(options, resolve, reject, defendType = 0) {
+const requestDefend = function (options, resolve, reject, defendType = 0) {
   storage.get('token').then((token) => {
     if (options.url.indexOf('http') === -1) {
       options.url = baseURL + options.url
     }
     if (defendType === 0) {
-      // options.url += `?Token=${token || '666'}`
-      options.url += `?Token=${token || '0f41d4d3-031f-47b7-a9e2-23cc7b48e6bf'}`
+      options.url += `?Token=${token || '666'}`
     } else {
-      // options.url = options.url.split('?')[0] + `?Token=${token || '666'}`
-      options.url = options.url.split('?')[0] + `?Token=${token || '0f41d4d3-031f-47b7-a9e2-23cc7b48e6bf'}`
+      options.url = options.url.split('?')[0] + `?Token=${token || '666'}`
     }
     options.method = options.method.toUpperCase()
     options.header = {

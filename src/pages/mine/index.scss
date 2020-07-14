@@ -1,4 +1,61 @@
-.index {
-  flex-direction: column;
-  width: 100%;
+@import "~taro-ui/dist/style/components/flex.scss";
+
+.container {
+  position: relative;
+  background-color: #eeeeee;
+  width: 100vw;
+  height:100vh;
+  .setting {
+    width: 16PX;
+    position: absolute;
+    top: 32PX;
+    left: 22PX;
+  }
+}
+.total-show {
+  height: 16vh;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 
+    0 0,
+    0 -2PX 2PX rgba(200,200,200,0.5),
+    0 0,
+    0 2PX 2PX rgba(200,200,200,0.5);
+  .split-line {
+    box-shadow:  1PX 0 1PX rgba(200,200,200,0.2);;
+  }
+  .num {
+    font-size: 24PX;
+    font-weight: bold;
+  }
+  .type {
+    font-size: 20PX;
+    font-weight: bold;
+  }
+}
+
+.task9 {
+  margin-top: 5vh;
+  height: 9vh;
+  font-size: 18PX;
+  font-weight: bold;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 -2PX 2PX rgba(200,200,200,0.5);
+}
+.left-line > .at-col-4 + .at-col-4 {
+  border-left: 1PX solid rgba(200,200,200,0.2);
+}
+.at-row__justify--between > .at-col-6 {
+  text-align: center;
+  color: #999999;
+}
+.cell-num {
+  margin-top: 5vh;
+  font-size: 20PX;
+  text-align: center;
+  font-weight: bold;
+}
+.last-row {
+  box-shadow: 0 2PX 2PX rgba(200,200,200,0.5)
 }

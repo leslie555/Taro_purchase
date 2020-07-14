@@ -1,4 +1,41 @@
-.index {
-  flex-direction: column;
-  width: 100%;
+.container {
+  .item {
+    position: relative;
+    margin-top: 24px;
+
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 36px;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .count {
+        color: white;
+        font-size: 48px;
+        font-weight: bold;
+      }
+
+      .title {
+        color: white;
+        font-size: 36px;
+        margin-top: 8px;
+      }
+
+      .tips {
+        color: white;
+        font-size: 24px
+      }
+    }
+
+  }
+
 }
+
+
+

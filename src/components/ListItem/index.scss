@@ -1,0 +1,33 @@
+@import "~taro-ui/dist/style/components/flex.scss";
+
+// $component: '.container';
+
+.container {
+  height: 110PX; 
+  background-color: #fff;
+  margin-top: 12PX;
+  box-shadow: 
+    0 0,
+    0 -2PX 2PX rgba(200,200,200,0.5),
+    0 0,
+    0 2PX 2PX rgba(200,200,200,0.5);
+}
+.narrowRow {
+  height:30PX;
+  font-size: 14PX;
+}
+.btn-container {
+  margin-left: -12PX;
+  padding:0 6PX;
+  height:100%;
+  margin-top: -10PX;
+}
+.handle {
+  height: 90%;
+  background:#49f;
+  border-radius: 6PX;
+  padding-top: 3PX;
+  color: white;
+  font-size: 16PX;
+  text-align: center
+}

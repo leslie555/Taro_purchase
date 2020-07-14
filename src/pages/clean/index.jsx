@@ -2,19 +2,35 @@ import Taro from '@tarojs/taro'
 import { View, Text, ScrollView, Button } from '@tarojs/components'
 import { AtTabs, AtTabsPane, AtButton } from 'taro-ui'
 import ListItem from '../../components/ListItem/index'
-import './index.scss'
+import '../order/index.scss'
 
 export default class Index extends Taro.Component {
-  config = {
-    navigationBarTitleText: '工单'
-  }
-  
+
   constructor () {
     super(...arguments)
     this.state = {
       current: 0,
+      data: {}
     }
   }
+  componentWillMount() {
+    
+  }
+  componentDidShow() {
+    const { type } = this.$router.params
+    let title
+    if (type === '1') {
+      title = '装修'
+    } else if (type === '2') {
+      title = '维修'
+    } else if (type === '3') {
+      title = '保洁'
+    } else {
+      title = '搬家'
+    }
+    Taro.setNavigationBarTitle({ title })
+  }
+
   handleClick (value) {
     this.setState({
       current: value
@@ -30,7 +46,7 @@ export default class Index extends Taro.Component {
     return (
       <AtTabs current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
         <AtTabsPane current={current} index={0} >
-          <ScrollView className='scroll-container'>
+          <ScrollView  className='scroll-container'>
             <ListItem />
             <ListItem />
             <ListItem />

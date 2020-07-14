@@ -26,18 +26,14 @@ class Storage {
         return reject(new Error("key不能是一个对象。"));
       }
       let value = {};
-
+      const data = Taro.getStorageSync(this.prefix + key);
+      value = data
       try {
-        const data = Taro.getStorageSync(this.prefix + key);
-        if (data) {
-          value = JSON.parse(data);
-          return resolve(value);
-        } else {
-          reject();
-        }
+        value = JSON.parse(value);
       } catch (e) {
-        //
+        // reject()
       }
+      return resolve(value);
     });
   }
 

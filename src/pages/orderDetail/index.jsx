@@ -20,7 +20,7 @@ export default class OrderDetail extends Taro.Component {
         <AtList>
           <AtListItem title='房源名称' onClick={this.handleClick} />
           <AtListItem title='地址' arrow='right' />
-          <AtListItem title='租客' extraText='详细信息' />
+          <AtListItem title='租客' extraText='详细信dasd细信dasd息' />
           <AtListItem title='业务员' disabled extraText='详细信息' />
           <AtListItem title='部门' arrow='right' />
           <AtListItem title='提交时间' extraText='详细信息' />

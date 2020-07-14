@@ -1,25 +1,13 @@
 @import "~taro-ui/dist/style/components/flex.scss";
-
-.index {
-  flex-direction: column;
-  width: 100%;
+.scroll-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f3f3;
 }
-
-.first-row {
-  flex-direction: row;
-  justify-content: space-between;
-  .type {
-    background-color: #49f;
-    // margin-left: 12px;
-    border-radius: 10px;
-    color: #fff;
-  }
-  .houseName {
-    margin-left: 24px;
-  }
-  .rightClick {
-    background: red;
-    float: right;
-  }
-  
+.date {
+  // text-align: center;
+  height: 3vh;
+  margin-top: 2vh;
+  padding-left: 4vw;
+  color: #999;
 }
